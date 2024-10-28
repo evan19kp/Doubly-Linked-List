@@ -44,3 +44,64 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/doublylinkedlist.git
 cd doublylinkedlist
+```
+
+### Compilation
+
+You can compile your project using any C++ compiler. For example, using `g++`:
+
+```bash
+g++ -std=c++11 -o test test_cases.cpp
+```
+
+### Running the Tests
+
+The project includes 50 test cases that ensure the correctness of the implementation. Once compiled, run the tests:
+
+```bash
+./test
+```
+
+This will output the results of each test case, indicating whether they passed or failed.
+
+## Usage
+
+Here’s a simple example of how to use the `DoublyLinkedList` class:
+
+```cpp
+#include "DLL.hpp"
+#include <iostream>
+
+int main() {
+    DoublyLinkedList<int> list;
+
+    // Inserting elements
+    list.push_back(10);
+    list.push_back(20);
+    list.push_front(5);
+
+    // Accessing elements
+    std::cout << "Front element: " << list.front() << std::endl; // 5
+    std::cout << "Back element: " << list.back() << std::endl;  // 20
+
+    // Reversing the list
+    list.reverse();
+    std::cout << "Front after reverse: " << list.front() << std::endl; // 20
+
+    // Iterating over the list
+    for (auto it = list.begin(); it != list.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+### Output:
+```
+Front element: 5
+Back element: 20
+Front after reverse: 20
+20 10 5 
+```
